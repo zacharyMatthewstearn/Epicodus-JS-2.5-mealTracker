@@ -4,49 +4,39 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <!--<div class="component">
-      <h2>New Meal:</h2>
+    <div class="component">
+      <h2>Add Meal:</h2>
       <div class="form-group">
-        <label for="new-meal_input-description">Enter Meal Description:</label>
-        <input id="new-meal_input-description" type="text" #newDescription>
+        <label for="new-meal_input-name">Enter Meal Name:</label>
+        <input id="new-meal_input-name" type="text" #newName>
       </div>
       <div class="form-group">
-        <label for="new-meal_input-id">Enter Meal ID:</label>
-        <input id="new-meal_input-id" type="text" #newId>
+        <label for="new-meal_input-details">Enter Meal Details:</label>
+        <input id="new-meal_input-details" type="text" #newDetails>
       </div>
       <div class="form-group">
-        <label for="new-meal_select-priority">Priority:</label>
-        <select id="new-meal_select-priority" #newPriority>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="new-meal_select-priority">Category:</label>
-        <select id="new-meal_select-category" #newCategory>
-          <option value="Work">Work</option>
-          <option value="Hobby">Hobby</option>
-          <option value="Home">Home</option>
-        </select>
+        <label for="new-meal_input-calories">Enter Calorie Count:</label>
+        <input id="new-meal_input-calories" type="number" min="0" #newCalorieCount>
       </div>
       <div>
         <button (click)="
-          addClicked(newDescription.value, newPriority.value, newId.value, newCategory.value);
-          newPriority.value='';
-          newCategory.value='';
-          newDescription.value='';
-          newId.value='';
+          addClicked(newName.value, newDetails.value, newCalorieCount.value);
+          newName.value='';
+          newDetails.value='';
+          newCalorieCount.value='';
         ">Add Meal to List</button>
       </div>
-    </div>-->
+    </div>
   `
 })
 
 export class NewMealComponent {
-  // @Output() newMealSender = new EventEmitter();
-  // addClicked(description: string, priority: string, id: number, category: string) {
-  //   var newMealToAdd: Meal = new Meal(description, priority, id, category);
-  //   this.newMealSender.emit(newMealToAdd);
-  // }
+  @Output() newMealSender = new EventEmitter();
+
+  newMealToAdd: Meal = null;
+
+  addClicked(name: string, details: string, calories: number) {
+    this.newMealToAdd = new Meal(name, details, calories);
+    this.newMealSender.emit(this.newMealToAdd);
+  }
 }

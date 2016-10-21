@@ -9,13 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var meal_model_1 = require('./meal.model');
 var EditMealComponent = (function () {
     function EditMealComponent() {
+        this.doneEditingSender = new core_1.EventEmitter();
     }
+    EditMealComponent.prototype.doneEditing = function () {
+        this.doneEditingSender.emit();
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', meal_model_1.Meal)
+    ], EditMealComponent.prototype, "childSelectedMeal", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], EditMealComponent.prototype, "doneEditingSender", void 0);
     EditMealComponent = __decorate([
         core_1.Component({
             selector: 'edit-meal',
-            template: "\n    <!--<div *ngIf=\"childSelectedMeal\"  class=\"component\">\n      <h1>Edit Meal</h1>\n      <div>\n        <label>Enter Meal Description:</label>\n        <input [(ngModel)]=\"childSelectedMeal.description\">\n      </div>\n      <select (change)=\"onChangePriority($event.target.value)\">\n        <option value=\"high\">High</option>\n        <option value=\"medium\">Medium</option>\n        <option value=\"low\">Low</option>\n      </select>\n      <select (change)=\"onChangeCategory($event.target.value)\">\n        <option value=\"work\">Work</option>\n        <option value=\"hobby\">Hobby</option>\n        <option value=\"home\">Home</option>\n      </select>\n      <div>\n        <label>Enter Meal ID:</label>\n        <input [(ngModel)]=\"childSelectedMeal.id\">\n        <button (click)=\"doneClicked()\">Done</button>\n      </div>\n    </div>-->\n  "
+            template: "\n    <div *ngIf=\"childSelectedMeal\"  class=\"component\">\n      <h2>Edit Meal</h2>\n      <div class=\"form-group\">\n        <label for=\"edit-meal_input-name\">Enter Meal Name:</label>\n        <input id=\"edit-meal_input-name\" type=\"text\" [(ngModel)]=\"childSelectedMeal.name\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"edit-meal_input-details\">Enter Meal Details:</label>\n        <input id=\"edit-meal_input-details\" type=\"text\" [(ngModel)]=\"childSelectedMeal.details\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"edit-meal_input-calories\">Enter Calorie Count:</label>\n        <input id=\"edit-meal_input-calories\" type=\"number\" min=\"0\" [(ngModel)]=\"childSelectedMeal.calories\">\n      </div>\n      <button (click)=\"doneEditing()\">Done</button>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EditMealComponent);

@@ -4,8 +4,8 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
-    <!--<div class="component">
-      <div>
+    <div class="component">
+      <!--<div>
         <div class="row filters">
           <div class="col col-xs-6">
             <h3>Filter List By:</h3>
@@ -39,37 +39,30 @@ import { Meal } from './meal.model';
             </div>
           </div>
         </div>
+      </div>-->
+      <div *ngFor="let currentMeal of childMealList">
+        <meal
+          [selectedMeal]="currentMeal"
+          (openEditorSender)="sendRequestToOpenEditorUpwardsToApp($event)"
+        ></meal>
       </div>
-      <div *ngFor="let currentMeal of childMealList | completeness:selectedCompleteness | priority:selectedPriority | category:selectedCategory">
-        <meal-display
-          [meal]="currentMeal"
-          (editClickSender)="editButtonStepTwo($event)"
-        ></meal-display>
-      </div>
-    </div>-->
+    </div>
   `
 })
 
 export class MealListComponent {
-  // @Input() childMealList: Meal[];
+  @Input() childMealList: Meal[];
+  @Input() mealToEdit: Meal;
   // @Output() clickSender = new EventEmitter();
-  // @Output() editClickIntermediarySender = new EventEmitter();
-  // public selectedCompleteness: string = "notDone";
-  // public selectedPriority: string = "all";
-  // public selectedCategory: string = "all";
-  // onChangeCompleteness(optionFromMenu) {
-  //   this.selectedCompleteness = optionFromMenu;
-  //   console.log(this.selectedCompleteness);
-  // }
-  // onChangePriority(optionFromMenu) {
-  //   this.selectedPriority = optionFromMenu;
-  //   console.log(this.selectedPriority);
-  // }
-  // onChangeCategory(optionFromMenu) {
-  //   this.selectedCategory = optionFromMenu;
-  //   console.log(this.selectedCategory);
-  // }
-  // editButtonStepTwo(mealToEdit: Meal) {
-  //   this.editClickIntermediarySender.emit(mealToEdit);
-  // }
+  @Output() openEditorSenderStepTwo = new EventEmitter();
+  // public selectedCalorieCount: string = "all";
+
+  sendRequestToOpenEditorUpwardsToApp(mealToEdit: Meal) {
+    // console.log("2" + mealToEdit);
+    this.openEditorSenderStepTwo.emit(mealToEdit);
+  }
+  onChangeCalorieCount(optionFromMenu) {
+    // this.selectedCalorieCount = optionFromMenu;
+    // console.log(this.selectedCalorieCount);
+  }
 }

@@ -9,13 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var meal_model_1 = require('./meal.model');
 var NewMealComponent = (function () {
     function NewMealComponent() {
+        this.newMealSender = new core_1.EventEmitter();
+        this.newMealToAdd = null;
     }
+    NewMealComponent.prototype.addClicked = function (name, details, calories) {
+        this.newMealToAdd = new meal_model_1.Meal(name, details, calories);
+        this.newMealSender.emit(this.newMealToAdd);
+    };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], NewMealComponent.prototype, "newMealSender", void 0);
     NewMealComponent = __decorate([
         core_1.Component({
             selector: 'new-meal',
-            template: "\n    <!--<div class=\"component\">\n      <h2>New Meal:</h2>\n      <div class=\"form-group\">\n        <label for=\"new-meal_input-description\">Enter Meal Description:</label>\n        <input id=\"new-meal_input-description\" type=\"text\" #newDescription>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"new-meal_input-id\">Enter Meal ID:</label>\n        <input id=\"new-meal_input-id\" type=\"text\" #newId>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"new-meal_select-priority\">Priority:</label>\n        <select id=\"new-meal_select-priority\" #newPriority>\n          <option value=\"high\">High</option>\n          <option value=\"medium\">Medium</option>\n          <option value=\"low\">Low</option>\n        </select>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"new-meal_select-priority\">Category:</label>\n        <select id=\"new-meal_select-category\" #newCategory>\n          <option value=\"Work\">Work</option>\n          <option value=\"Hobby\">Hobby</option>\n          <option value=\"Home\">Home</option>\n        </select>\n      </div>\n      <div>\n        <button (click)=\"\n          addClicked(newDescription.value, newPriority.value, newId.value, newCategory.value);\n          newPriority.value='';\n          newCategory.value='';\n          newDescription.value='';\n          newId.value='';\n        \">Add Meal to List</button>\n      </div>\n    </div>-->\n  "
+            template: "\n    <div class=\"component\">\n      <h2>Add Meal:</h2>\n      <div class=\"form-group\">\n        <label for=\"new-meal_input-name\">Enter Meal Name:</label>\n        <input id=\"new-meal_input-name\" type=\"text\" #newName>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"new-meal_input-details\">Enter Meal Details:</label>\n        <input id=\"new-meal_input-details\" type=\"text\" #newDetails>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"new-meal_input-calories\">Enter Calorie Count:</label>\n        <input id=\"new-meal_input-calories\" type=\"number\" min=\"0\" #newCalorieCount>\n      </div>\n      <div>\n        <button (click)=\"\n          addClicked(newName.value, newDetails.value, newCalorieCount.value);\n          newName.value='';\n          newDetails.value='';\n          newCalorieCount.value='';\n        \">Add Meal to List</button>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], NewMealComponent);

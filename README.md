@@ -1,10 +1,10 @@
 # _Meal Tracker_
 
-#### By [**Zachary Matthewstearn**](https://github.com/zacharyMatthewstearn)
+#### By [**Zachary Matthewstearn**](https://github.com/zacharyMatthewstearn) , 10/21/2016
 
 ## Description
 
-!!!!!INSERT!!!!!
+Web app where users may enter information on the meals they've eaten, including calorie counts. They may then filter their list of meals by those counts. Written in TypeScript with AngularJS.
 
 ## Setup/Installation Requirements
 
@@ -15,7 +15,7 @@ Requirements:
 
 Setup:
 
-1. Clone this repository to your desktop `$ git clone https://github.com/zacharyMatthewstearn/github_lookup.git`
+1. Clone this repository to your desktop `$ git clone https://github.com/zacharyMatthewstearn/Epicodus-JS-2.5-mealTracker`
 2. Run the following commands from the root directory of the cloned project:
   * `$ npm install`
   * `$ bower install`

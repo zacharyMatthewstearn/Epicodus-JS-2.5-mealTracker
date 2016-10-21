@@ -33,7 +33,7 @@ import { Meal } from './meal.model';
 export class NewMealComponent {
   @Output() newMealSender = new EventEmitter();
 
-  newMealToAdd: Meal = null;
+  public newMealToAdd: Meal = null;
 
   addClicked(name: string, details: string, calories: number) {
     this.newMealToAdd = new Meal(name, details, calories);

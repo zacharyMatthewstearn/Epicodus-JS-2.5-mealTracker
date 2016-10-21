@@ -14,21 +14,25 @@ import { Meal }       from './meal.model';
         <div class="row">
           <div class="col col-md-6">
             <div class="inner-box">
+              <filter
+                (changeCaloriesFilterSender)="passFilterOnToList($event)"
+              ></filter>
               <meal-list
                 [childMealList]="masterMealList"
+                [selectedCalorieCount]="selectedCalorieCountFilter"
                 (openEditorSenderStepTwo)="openEditor($event)"
               ></meal-list>
             </div>
           </div>
           <div class="col col-md-6">
             <div class="inner-box">
+              <new-meal
+                (newMealSender)="submitNewMeal($event)"
+              ></new-meal>
               <edit-meal
                 [childSelectedMeal]="selectedMeal"
                 (doneClickedSender)="closeEditor()"
               ></edit-meal>
-              <new-meal
-                (newMealSender)="submitNewMeal($event)"
-              ></new-meal>
             </div>
           </div>
         </div>
@@ -44,10 +48,10 @@ export class AppComponent {
       new Meal('Food3', 'Details3', 300),
       new Meal('Food4', 'Details4', 400)
   ];
-  selectedMeal: Meal = null;
+  public selectedMeal: Meal = null;
+  public selectedCalorieCountFilter: string = "";
 
   openEditor(clickedMeal: Meal) {
-    // console.log("3" + clickedMeal);
     this.selectedMeal = clickedMeal;
   }
   closeEditor() {
@@ -55,5 +59,8 @@ export class AppComponent {
   }
   submitNewMeal(newMealFromChild: Meal) {
     this.masterMealList.push(newMealFromChild);
+  }
+  passFilterOnToList(calorieCount: string) {
+    this.selectedCalorieCountFilter = calorieCount;
   }
 }

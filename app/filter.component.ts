@@ -4,59 +4,33 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'filter',
   template: `
-    <!--<div class="component">
-      <div class="row filters">
-        <div class="col col-xs-6">
+    <div class="component">
+      <div class="row">
+        <div class="col col-xs-5">
           <h3>Filter List By:</h3>
         </div>
-        <div class="col col-xs-6">
+        <div class="col col-xs-7">
           <div class="form-group">
             <label for="filter-completion">Completion:</label>
-            <select id="filter-completion" (change)="onChangeCompleteness($event.target.value)" class="filter">
-              <option value="notDone" selected>Show Not Done</option>
-              <option value="isDone">Show Done</option>
-              <option value="all">Show All</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="filter-priority">Priority:</label>
-            <select id="filter-priority" (change)="onChangePriority($event.target.value)" class="filter">
-              <option value="All" selected>All</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="filter-category">Category:</label>
-            <select id="filter-category" (change)="onChangeCategory($event.target.value)" class="filter">
-              <option value="All" selected>All</option>
-              <option value="Work">Work</option>
-              <option value="Home">Home</option>
-              <option value="Hobby">Hobby</option>
+            <select id="filter-completion" (change)="onChangeCalorieCount($event.target.value)" class="filter">
+              <option value="all" selected>Show All</option>
+              <option value="low">Show Low-Calorie Meals Only (under 500kcal)</option>
+              <option value="high">Show High-Calorie Meals Only (500kcal and over)</option>
             </select>
           </div>
         </div>
       </div>
-    </div>-->
+    </div>
   `
 })
 export class FilterComponent {
-  // @Input() childTaskList: Meal[];
-  // @Output() clickSender = new EventEmitter();
-  // public selectedCompleteness: string = "notDone";
-  // public selectedPriority: string = "all";
-  // public selectedCategory: string = "all";
-  // onChangeCompleteness(optionFromMenu) {
-  //   this.selectedCompleteness = optionFromMenu;
-  //   console.log(this.selectedCompleteness);
-  // }
-  // onChangePriority(optionFromMenu) {
-  //   this.selectedPriority = optionFromMenu;
-  //   console.log(this.selectedPriority);
-  // }
-  // onChangeCategory(optionFromMenu) {
-  //   this.selectedCategory = optionFromMenu;
-  //   console.log(this.selectedCategory);
-  // }
+  @Input() childTaskList: Meal[];
+  @Output() changeCaloriesFilterSender = new EventEmitter();
+
+  public selectedCalorieCount: string = "all";
+
+  onChangeCalorieCount(optionFromMenu) {
+    this.selectedCalorieCount = optionFromMenu;
+    this.changeCaloriesFilterSender.emit(this.selectedCalorieCount);
+  }
 }

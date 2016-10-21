@@ -15,7 +15,6 @@ var MealComponent = (function () {
         this.openEditorSender = new core_1.EventEmitter();
     }
     MealComponent.prototype.sendRequestToOpenEditorUpwardsToMealList = function () {
-        // console.log("1" + this.selectedMeal);
         this.openEditorSender.emit(this.selectedMeal);
     };
     __decorate([

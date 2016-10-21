@@ -17,7 +17,6 @@ export class MealComponent {
   @Output() openEditorSender = new EventEmitter();
 
   sendRequestToOpenEditorUpwardsToMealList() {
-    // console.log("1" + this.selectedMeal);
     this.openEditorSender.emit(this.selectedMeal);
   }
 }

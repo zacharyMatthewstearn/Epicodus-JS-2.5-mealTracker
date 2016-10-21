@@ -12,22 +12,27 @@ var core_1 = require('@angular/core');
 var CaloriesPipe = (function () {
     function CaloriesPipe() {
     }
-    CaloriesPipe.prototype.transform = function (input, desiredPriority) {
-        // var output: Meal[] = [];
-        // if(desiredPriority === "High" ||
-        //    desiredPriority === "Medium" ||
-        //    desiredPriority === "Low")
-        // {
-        //   for (var i = 0; i < input.length; i++) {
-        //     if (input[i].priority === desiredPriority) {
-        //       output.push(input[i]);
-        //     }
-        //   }
-        //   return output;
-        // }
-        // else {
-        return input;
-        // }
+    CaloriesPipe.prototype.transform = function (input, desiredCalorieCount) {
+        var output = [];
+        if (desiredCalorieCount === "low") {
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].calories < 500) {
+                    output.push(input[i]);
+                }
+            }
+            return output;
+        }
+        else if (desiredCalorieCount === "high") {
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].calories >= 500) {
+                    output.push(input[i]);
+                }
+            }
+            return output;
+        }
+        else {
+            return input;
+        }
     };
     CaloriesPipe = __decorate([
         core_1.Pipe({

@@ -28,7 +28,7 @@ var MealComponent = (function () {
     MealComponent = __decorate([
         core_1.Component({
             selector: 'meal',
-            template: "\n    <div class=\"component\">\n      <p>{{ selectedMeal.name }}</p>\n      <p>{{ selectedMeal.details }}</p>\n      <p>{{ selectedMeal.calories }} calories</p>\n      <button (click)=\"sendRequestToOpenEditorUpwardsToMealList()\">Edit</button>\n    </div>\n  "
+            template: "\n    <div class=\"component\">\n      <h3>{{ selectedMeal.name }}: {{ selectedMeal.calories }} calories</h3>\n      <h4>{{ selectedMeal.details }}</h4>\n      <button (click)=\"sendRequestToOpenEditorUpwardsToMealList()\">Edit</button>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MealComponent);

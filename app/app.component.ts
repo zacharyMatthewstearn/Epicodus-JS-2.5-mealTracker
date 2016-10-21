@@ -17,22 +17,22 @@ import { Meal }       from './meal.model';
               <filter
                 (changeCaloriesFilterSender)="passFilterOnToList($event)"
               ></filter>
-              <meal-list
-                [childMealList]="masterMealList"
-                [selectedCalorieCount]="selectedCalorieCountFilter"
-                (openEditorSenderStepTwo)="openEditor($event)"
-              ></meal-list>
-            </div>
-          </div>
-          <div class="col col-md-6">
-            <div class="inner-box">
               <new-meal
                 (newMealSender)="submitNewMeal($event)"
               ></new-meal>
               <edit-meal
                 [childSelectedMeal]="selectedMeal"
-                (doneClickedSender)="closeEditor()"
+                (doneEditingSender)="closeEditor()"
               ></edit-meal>
+            </div>
+          </div>
+          <div class="col col-md-6">
+            <div class="inner-box">
+              <meal-list
+                [childMealList]="masterMealList"
+                [selectedCalorieCount]="selectedCalorieCountFilter"
+                (openEditorSenderStepTwo)="openEditor($event)"
+              ></meal-list>
             </div>
           </div>
         </div>

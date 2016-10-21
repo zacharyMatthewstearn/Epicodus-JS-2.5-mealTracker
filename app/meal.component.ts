@@ -5,9 +5,8 @@ import { Meal } from './meal.model';
   selector: 'meal',
   template: `
     <div class="component">
-      <p>{{ selectedMeal.name }}</p>
-      <p>{{ selectedMeal.details }}</p>
-      <p>{{ selectedMeal.calories }} calories</p>
+      <h3>{{ selectedMeal.name }}: {{ selectedMeal.calories }} calories</h3>
+      <h4>{{ selectedMeal.details }}</h4>
       <button (click)="sendRequestToOpenEditorUpwardsToMealList()">Edit</button>
     </div>
   `

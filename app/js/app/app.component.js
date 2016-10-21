@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var meal_model_1 = require('./meal.model');
+var core_1 = require("@angular/core");
+var meal_model_1 = require("./meal.model");
 var AppComponent = (function () {
     function AppComponent() {
         this.masterMealList = [
@@ -33,14 +33,14 @@ var AppComponent = (function () {
     AppComponent.prototype.passFilterOnToList = function (calorieCount) {
         this.selectedCalorieCountFilter = calorieCount;
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app',
-            template: "\n    <div class=\"root-component\">\n      <div class=\"jumbotron\">\n        <div class=\"container\">\n          <h1>Zack's Super-Fantastic Meal Tracker App</h1>\n        </div>\n      </div>\n      <div class=\"containter\">\n        <div class=\"row\">\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <filter\n                (changeCaloriesFilterSender)=\"passFilterOnToList($event)\"\n              ></filter>\n              <new-meal\n                (newMealSender)=\"submitNewMeal($event)\"\n              ></new-meal>\n              <edit-meal\n                [childSelectedMeal]=\"selectedMeal\"\n                (doneEditingSender)=\"closeEditor()\"\n              ></edit-meal>\n            </div>\n          </div>\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <meal-list\n                [childMealList]=\"masterMealList\"\n                [selectedCalorieCount]=\"selectedCalorieCountFilter\"\n                (openEditorSenderStepTwo)=\"openEditor($event)\"\n              ></meal-list>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'app',
+        template: "\n    <div class=\"root-component\">\n      <div class=\"jumbotron\">\n        <div class=\"container\">\n          <h1>Zack's Super-Fantastic Meal Tracker App</h1>\n        </div>\n      </div>\n      <div class=\"containter\">\n        <div class=\"row\">\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <filter\n                (changeCaloriesFilterSender)=\"passFilterOnToList($event)\"\n              ></filter>\n              <new-meal\n                (newMealSender)=\"submitNewMeal($event)\"\n              ></new-meal>\n              <edit-meal\n                [childSelectedMeal]=\"selectedMeal\"\n                (doneEditingSender)=\"closeEditor()\"\n              ></edit-meal>\n            </div>\n          </div>\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <meal-list\n                [childMealList]=\"masterMealList\"\n                [selectedCalorieCount]=\"selectedCalorieCountFilter\"\n                (openEditorSenderStepTwo)=\"openEditor($event)\"\n              ></meal-list>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

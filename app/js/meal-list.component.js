@@ -44,7 +44,7 @@ var MealListComponent = (function () {
     MealListComponent = __decorate([
         core_1.Component({
             selector: 'meal-list',
-            template: "\n    <div class=\"component\">\n      <div *ngFor=\"let currentMeal of childMealList | calories:selectedCalorieCount\">\n        <meal\n          [selectedMeal]=\"currentMeal\"\n          (openEditorSender)=\"sendRequestToOpenEditorUpwardsToApp($event)\"\n        ></meal>\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"component\">\n      <h2>My Meals:</h2>\n      <div *ngFor=\"let currentMeal of childMealList | calories:selectedCalorieCount\">\n        <meal\n          [selectedMeal]=\"currentMeal\"\n          (openEditorSender)=\"sendRequestToOpenEditorUpwardsToApp($event)\"\n        ></meal>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MealListComponent);

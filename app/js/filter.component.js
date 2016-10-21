@@ -29,7 +29,7 @@ var FilterComponent = (function () {
     FilterComponent = __decorate([
         core_1.Component({
             selector: 'filter',
-            template: "\n    <div class=\"component\">\n      <div class=\"row\">\n        <div class=\"col col-xs-5\">\n          <h3>Filter List By:</h3>\n        </div>\n        <div class=\"col col-xs-7\">\n          <div class=\"form-group\">\n            <label for=\"filter-completion\">Completion:</label>\n            <select id=\"filter-completion\" (change)=\"onChangeCalorieCount($event.target.value)\" class=\"filter\">\n              <option value=\"all\" selected>Show All</option>\n              <option value=\"low\">Show Low-Calorie Meals Only (under 500kcal)</option>\n              <option value=\"high\">Show High-Calorie Meals Only (500kcal and over)</option>\n            </select>\n          </div>\n        </div>\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"component\">\n      <div class=\"form-group\">\n        <h2>Filter Meals by Calorie Count:</h2>\n        <select id=\"filter-completion\" (change)=\"onChangeCalorieCount($event.target.value)\" class=\"filter\">\n          <option value=\"all\" selected>Show All</option>\n          <option value=\"low\">Show Low-Calorie Meals Only (under 500kcal)</option>\n          <option value=\"high\">Show High-Calorie Meals Only (500kcal and over)</option>\n        </select>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], FilterComponent);

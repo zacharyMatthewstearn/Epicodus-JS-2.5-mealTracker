@@ -14,7 +14,7 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
+            selector: 'app',
             template: "\n    <div class=\"root-component\">\n      <div class=\"jumbotron\">\n        <div class=\"container\">\n          <h1>Zack's Super-Fantastic Meal Tracker App</h1>\n        </div>\n      </div>\n      <!--<div class=\"containter\">\n        <div class=\"row\">\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <meal-list\n                [childMealList]=\"masterMealList\"\n                (editClickIntermediarySender)=\"showDetails($event)\"\n              ></meal-list>\n            </div>\n          </div>\n          <div class=\"col col-md-6\">\n            <div class=\"inner-box\">\n              <edit-meal\n                [childSelectedMeal]=\"selectedMeal\"\n                (doneClickedSender)=\"finishedEditing()\"\n              ></edit-meal>\n              <new-meal\n                (newMealSender)=\"addMeal($event)\"\n              ></new-meal>\n            </div>\n          </div>\n        </div>\n      </div>-->\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])

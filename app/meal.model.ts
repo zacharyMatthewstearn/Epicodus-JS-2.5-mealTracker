@@ -1,3 +1,3 @@
 export class Meal {
-  constructor() {}
+  constructor(public name: string, public details: string, public calories: number) {}
 }

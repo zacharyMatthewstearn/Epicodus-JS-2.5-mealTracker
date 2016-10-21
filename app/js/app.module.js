@@ -12,6 +12,12 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var edit_meal_component_1 = require('./edit-meal.component');
+var filter_component_1 = require('./filter.component');
+var meal_list_component_1 = require('./meal-list.component');
+var meal_component_1 = require('./meal.component');
+var new_meal_component_1 = require('./new-meal.component');
+var calories_pipe_1 = require('./calories.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +29,12 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
+                edit_meal_component_1.EditMealComponent,
+                filter_component_1.FilterComponent,
+                meal_list_component_1.MealListComponent,
+                meal_component_1.MealComponent,
+                new_meal_component_1.NewMealComponent,
+                calories_pipe_1.CaloriesPipe
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

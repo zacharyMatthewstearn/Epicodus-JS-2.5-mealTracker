@@ -2,7 +2,7 @@ import { Component }  from '@angular/core';
 import { Meal }       from './meal.model';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app',
   template: `
     <div class="root-component">
       <div class="jumbotron">

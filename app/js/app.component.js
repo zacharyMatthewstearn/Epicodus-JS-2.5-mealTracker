@@ -9,15 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var meal_model_1 = require('./meal.model');
 var AppComponent = (function () {
     function AppComponent() {
-        this.masterMealList = [
-            new meal_model_1.Meal('Food1', 'Details1', 100),
-            new meal_model_1.Meal('Food2', 'Details2', 200),
-            new meal_model_1.Meal('Food3', 'Details3', 300),
-            new meal_model_1.Meal('Food4', 'Details4', 400)
-        ];
+        this.masterMealList = [];
         this.selectedMeal = null;
         this.selectedCalorieCountFilter = "";
     }

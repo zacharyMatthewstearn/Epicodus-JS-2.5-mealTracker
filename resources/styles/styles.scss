@@ -1,6 +1,7 @@
 // BootStrap Components
 .jumbotron {
-  background-color: rgba(0,0,0,0.2);
+  background-color: peru;
+  color: white;
   text-align: center;
   margin-bottom: 0;
   padding: 2rem 10%;
@@ -34,7 +35,8 @@
   background-color: papayawhip;
 }
 .component {
-  border: 1px solid fuchsia;
+  border: 3px solid peru;
+  border-radius: 15px;
   background-color: rgba(0,0,0,0.2);
   padding: 10px 20px;
   margin: 10px 0;

@@ -42,12 +42,7 @@ import { Meal }       from './meal.model';
 })
 
 export class AppComponent {
-  public masterMealList: Meal[] = [
-      new Meal('Food1', 'Details1', 100),
-      new Meal('Food2', 'Details2', 200),
-      new Meal('Food3', 'Details3', 300),
-      new Meal('Food4', 'Details4', 400)
-  ];
+  public masterMealList: Meal[] = [];
   public selectedMeal: Meal = null;
   public selectedCalorieCountFilter: string = "";
 
